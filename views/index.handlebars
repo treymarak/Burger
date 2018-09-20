@@ -44,7 +44,13 @@
 			      	{{this.id}}
 			        {{this.burger_name}}
 
-			      </li>
+						<form action="/delete/{{this.id}}" method="POST">
+							<input type="hidden" name="devoured" value="true">
+							<input type="hidden" name="action" value="true">
+							<button class="btn-primary" type="submit">Delete Burger!</button>
+						</form>
+
+			     </li>
 			    {{/if}}
 			  {{/each}}
 			

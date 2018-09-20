@@ -36,4 +36,14 @@ router.post("/:id", function(req, res) {
   });
 });
 
+router.post("/delete/:id", function(req, res) {
+  var condition = "id = " + req.params.id;
+
+  console.log("condition", condition);
+
+  burger.delete(condition, function() {
+    res.redirect("/");
+  });
+});
+
 module.exports = router;
